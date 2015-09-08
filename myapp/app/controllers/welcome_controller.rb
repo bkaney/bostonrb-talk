@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    render text: "Welcome aboard. Redis uptime: #{redis.info['uptime_in_seconds']}s. Postgresql: #{postgresql.tables.join}"
+    render text: "Welcome aboard! Redis uptime: #{redis.info['uptime_in_seconds']}s. Postgresql: #{postgresql.tables.join}"
   end
 
   private

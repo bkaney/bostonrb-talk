@@ -38,4 +38,12 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Something must be setting this to true, forcing to false
+  config.reload_classes_only_on_change = false
+
+  # Heroku ruby image precompiles the assest, this makes sure
+  # they are served locally.
+  config.serve_static_files = true
+
 end

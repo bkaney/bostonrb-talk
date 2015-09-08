@@ -6,11 +6,14 @@ web:
     PORT: 8080
     DATABASE_URL: 'postgres://postgres:@herokuPostgresql:5432/postgres'
     REDIS_URL: 'redis://herokuRedis:6379'
+    RAILS_ENV: development
   ports:
     - '8080:8080'
   links:
     - herokuPostgresql
     - herokuRedis
+  volumes:
+    - '.:/app/user'
 shell:
   build: .
   command: bash
@@ -19,6 +22,7 @@ shell:
     PORT: 8080
     DATABASE_URL: 'postgres://postgres:@herokuPostgresql:5432/postgres'
     REDIS_URL: 'redis://herokuRedis:6379'
+    RAILS_ENV: development
   #ports:
     #- '8080:8080'
   links:

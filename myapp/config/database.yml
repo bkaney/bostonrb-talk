@@ -6,7 +6,7 @@ default: &default
   username: postgres
   # please see the update below about using hostnames to
   # access linked services via docker-compose
-  host: postgres
+  host: herokuPostgresql
   port: 5432
 
 development:
@@ -20,3 +20,7 @@ development:
 test:
   <<: *default
   database: myapp_test
+
+production:
+  <<: *default
+  database: myapp_production

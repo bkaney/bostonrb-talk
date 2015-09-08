@@ -10,6 +10,6 @@ class WelcomeController < ApplicationController
   end
 
   def redis
-    @redis ||= Redis.new(host: 'redis', port: 6379)
+    @redis ||= Redis.new(host: 'herokuRedis', port: 6379)
   end
 end

@@ -1,0 +1,32 @@
+app:
+  restart: always
+  build: .
+  command: rails server -p 3000 -b '0.0.0.0'
+  volumes:
+    - .:/myapp
+  ports:
+    - "3000:3000"
+  links:
+    - postgres
+    - redis
+
+redis:
+  restart: always
+  image: redis:3
+  ports:
+    - "6379"
+
+postgres:
+  restart: always
+  image: postgres:9.4
+  ports:
+    - "5432"
+  volumes_from:
+    - data
+
+data:
+  image: postgres:9.4
+  volumes:
+    - /var/lib/postgresql/data
+  command: echo 'Data Container for PostgreSQL'
+

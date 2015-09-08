@@ -1,0 +1,9 @@
+{
+  "name": "Myapp",
+  "description": "An example app",
+  "image": "heroku/ruby",
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ]
+}
